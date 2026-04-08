@@ -1,26 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>合成大西瓜</title>
+    <title>食物口味偏好小调查</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>合成大西瓜</h1>
-    <div id="score-container">Score: <span id="score">0</span></div>
-    <div id="best-score-container">Best Score: <span id="best-score">0</span></div>
-    <div id="last-score-container">Last Score: <span id="last-score">0</span></div>
-    <div class="main-container">
-        <div id="game-container"></div>
-        <div id="next-fruit-container">
-        <p>Next:</p>
-        <div id="next-fruit-preview"></div>
+    <div class="container">
+        <h1>食物口味偏好小调查 🍽️</h1>
+        <form id="surveyForm">
+            <div class="question-group">
+                <p>1. 你更喜欢哪种口味？</p>
+                <label><input type="radio" name="q1" value="A"> A. 偏咸</label><br>
+                <label><input type="radio" name="q1" value="B"> B. 偏甜</label><br>
+                <label><input type="radio" name="q1" value="C"> C. 都可以</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>2. 你更喜欢哪种粽子？</p>
+                <label><input type="radio" name="q2" value="A"> A. 咸粽子（肉粽等）</label><br>
+                <label><input type="radio" name="q2" value="B"> B. 甜粽子（豆沙、蜜枣等）</label><br>
+                <label><input type="radio" name="q2" value="C"> C. 都喜欢</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>3. 你对辣味的接受程度是？</p>
+                <label><input type="radio" name="q3" value="A"> A. 完全不能吃辣</label><br>
+                <label><input type="radio" name="q3" value="B"> B. 微辣可以</label><br>
+                <label><input type="radio" name="q3" value="C"> C. 很能吃辣</label><br>
+                <label><input type="radio" name="q3" value="D"> D. 无辣不欢</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>4. 你更喜欢哪种饮料？</p>
+                <label><input type="radio" name="q4" value="A"> A. 奶茶/甜饮</label><br>
+                <label><input type="radio" name="q4" value="B"> B. 无糖茶/咖啡</label><br>
+                <label><input type="radio" name="q4" value="C"> C. 碳酸饮料</label><br>
+                <label><input type="radio" name="q4" value="D"> D. 白开水</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>5. 你更喜欢哪种早餐？</p>
+                <label><input type="radio" name="q5" value="A"> A. 中式（包子、粥等）</label><br>
+                <label><input type="radio" name="q5" value="B"> B. 西式（面包、牛奶等）</label><br>
+                <label><input type="radio" name="q5" value="C"> C. 不固定</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>6. 你更喜欢哪种主食？</p>
+                <label><input type="radio" name="q6" value="A"> A. 米饭</label><br>
+                <label><input type="radio" name="q6" value="B"> B. 面食（面条、馒头等）</label><br>
+                <label><input type="radio" name="q6" value="C"> C. 都可以</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>7. 你对油腻食物的态度是？</p>
+                <label><input type="radio" name="q7" value="A"> A. 很喜欢</label><br>
+                <label><input type="radio" name="q7" value="B"> B. 偶尔可以</label><br>
+                <label><input type="radio" name="q7" value="C"> C. 尽量避免</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>8. 你更喜欢哪种零食？</p>
+                <label><input type="radio" name="q8" value="A"> A. 薯片等咸味零食</label><br>
+                <label><input type="radio" name="q8" value="B"> B. 蛋糕、糖果等甜食</label><br>
+                <label><input type="radio" name="q8" value="C"> C. 坚果类</label><br>
+                <label><input type="radio" name="q8" value="D"> D. 不太吃零食</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>9. 你更倾向于哪种口感？</p>
+                <label><input type="radio" name="q9" value="A"> A. 酥脆</label><br>
+                <label><input type="radio" name="q9" value="B"> B. 软糯</label><br>
+                <label><input type="radio" name="q9" value="C"> C. Q弹</label><br>
+                <label><input type="radio" name="q9" value="D"> D. 清爽</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>10. 如果必须选择一种，你更喜欢？</p>
+                <label><input type="radio" name="q10" value="A"> A. 重口味（辣、咸、油）</label><br>
+                <label><input type="radio" name="q10" value="B"> B. 清淡口味</label><br>
+                <label><input type="radio" name="q10" value="C"> C. 视情况而定</label><br>
+            </div>
+
+            <div class="question-group">
+                <p>11. （可选）你有没有特别讨厌的食物或口味？</p>
+                <textarea name="q11" rows="4" placeholder="请填写您讨厌的食物或口味..."></textarea>
+            </div>
+
+            <button type="submit">提交问卷</button>
+            <div id="message" style="margin-top: 20px;"></div>
+        </form>
     </div>
-    <button id="start-game-button">开始游戏</button>
-    <button id="end-game-button">结束游戏</button>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
